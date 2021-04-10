@@ -1,2 +1,4 @@
 # senla-js-homework-1
-SENLA courses JS homework 1 (basic js skills)
+## SENLA courses JS homework 1 (basic js skills)
+
+all tasks on different branches
