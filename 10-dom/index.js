@@ -48,6 +48,5 @@ document.addEventListener('DOMContentLoaded', function () {
     */
 
     let ul = document.querySelector('ul');
-    ul.className = 'list';
-
+    ul.classList.add('list');
 });
