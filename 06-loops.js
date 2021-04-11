@@ -6,19 +6,20 @@
 */
 
 const testString1 = 'Я стану крутым программистом';
-const firstTestStringWithFirstCharsInUpperCase = allFirstWordsCharToUpperCase(testString1);
+const capitalizedTestString = capitalize(testString1);
+console.log(capitalizedTestString);
 
-function allFirstWordsCharToUpperCase(string) {
+function capitalize(string) {
     if (isStringAndNotEmpty(string)) {
-        let stringWithFirstCharsInUpperCase = '';
-        for (let i = 0; i < string.length; ++i) {
+        let capitalizedString = '';
+        for (let i = 0; i < string.length; i++) {
             if ((i === 0) || (string[i - 1] === ' ')) {
-                stringWithFirstCharsInUpperCase += string[i].toUpperCase();
+                capitalizedString += string[i].toUpperCase();
             } else {
-                stringWithFirstCharsInUpperCase += string[i];
+                capitalizedString += string[i];
             }
         }
-        return stringWithFirstCharsInUpperCase;
+        return capitalizedString;
     }
 };
 
@@ -113,26 +114,19 @@ oddNumberFromTo(1, 20);
  */
 
 const testString2 = 'теперь я мастер циклов javascript';
+const camelCasedTestString = toCamelCase(testString2);
 
-function deleteSpaces(string) {
+function toCamelCase(string) {
     if (isStringAndNotEmpty(string)) {
-        let stringWithoutSpaces = '';
+        let camelCaseString = '';
+        string = capitalize(string);
         for (let i = 0; i < string.length; i++) {
             if (string[i] === ' ') {
             } else {
-                stringWithoutSpaces += string[i];
+                camelCaseString += string[i];
             }
         }
-        return stringWithoutSpaces;
+        return camelCaseString;
     }
 
-}
-
-const secondTestStringWithFirstCharsInUpperCase = allFirstWordsCharToUpperCase(testString2);
-const secondTestStringAfterTransformation = deleteSpaces(secondTestStringWithFirstCharsInUpperCase);
-
-/*
-альтернативный вариант :) без циклов
-const secondTestStringAfterTransformation = allFirstWordsCharToUpperCase(testString2).split(' ').join('');
-*/
-
+};
