@@ -14,6 +14,6 @@ const device = {
 device.price = 1500;
 device.currency = 'dollar';
 device.details = {
-    model: '',
+    model: 'PRO',
     color: 'silver',
 };
