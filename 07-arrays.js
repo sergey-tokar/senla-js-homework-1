@@ -40,7 +40,7 @@ function repeatArray(array) {
 а возвращала массив, заполненный числами от 1 до n.
 */
 
-const arrayOfNumbers = creatArrayFromOneTo(5);
+const numbersArray = creatArrayFromOneTo(5);
 
 function creatArrayFromOneTo(numberOfElements) {
     if (isNumber(numberOfElements)) {
@@ -69,10 +69,7 @@ const arraysWithoutFirstElements = deleteArraysFirstElements(testArray2, testArr
 
 function deleteArraysFirstElements(...arrays) {
     let cloneArrays = arrays.map(array => [...array]);
-    return cloneArrays.map(array => {
-        array.shift();
-        return array;
-    });
+    return cloneArrays.map(array => array.slice(1));
 };
 
 /*
@@ -84,8 +81,6 @@ function deleteArraysFirstElements(...arrays) {
 
 const testString = 'екважбигёзд';
 const testStringReversAlphabeticOrder = sortReversAlphabeticOrder(testString);
-console.log(testString);
-console.log(testStringReversAlphabeticOrder);
 
 function sortReversAlphabeticOrder(string) {
     if (isStringAndNotEmpty(string)) {
@@ -109,8 +104,7 @@ function isStringAndNotEmpty(stringForCheck) {
 */
 const testArray4 = [5, 2, -1, 6, 9, -9, 3];
 const arrayInReversOrder = sortReversNumberOrder(testArray4);
-console.log(arrayInReversOrder);
-console.log(testArray4);
+
 function sortReversNumberOrder(array) {
     if (isArrayAndNotEmpty(array)) {
         let cloneArray = Array.from(array);
@@ -131,8 +125,6 @@ function sortReversNumberOrder(array) {
 
 const testArray5 = ['а', 'б', 'в', 'г', 'д', 'е'];
 const newArray = getNewArray(testArray5, 1, 3);
-console.log(newArray);
-console.log(testArray5);
 
 function getNewArray(array, start, end) {
     if (isArrayAndNotEmpty(array) && isNumber(start) && isNumber(end)) {
@@ -186,9 +178,9 @@ testArray8.splice(2, 0, 'added element');
 */
 
 const testArray9 = [creatArrayFromOneTo(5), creatArrayFromOneTo(3), creatArrayFromOneTo(10), creatArrayFromOneTo(2)];
-const sortedArrays = sortArraysOnLength(testArray9);
+const sortedArrays = sortArraysByLength(testArray9);
 
-function sortArraysOnLength(arrays) {
+function sortArraysByLength(arrays) {
     let cloneArrays = arrays.map((array) => [...array]);
     return cloneArrays.sort((array1, array2) => array1.length - array2.length);
 };
@@ -206,9 +198,9 @@ const animals = [{kind: "tarantula", info: {legs: 8, eyes: 8}},
     {kind: "french bulldog", info: {legs: 4, eyes: 2}},
     {kind: "human", info: {legs: 2, eyes: 2}},
     {kind: "lobster", info: {legs: 10, eyes: 2}}];
-const sortedAnimals = sortAnimalsOnLegsQnt(animals);
+const sortedAnimals = sortAnimalsByLegsQnt(animals);
 
-function sortAnimalsOnLegsQnt(array) {
+function sortAnimalsByLegsQnt(array) {
     if (isArrayAndNotEmpty(array)) {
         let cloneArray = Array.from(array);
         return cloneArray.sort((animal1, animal2) => animal1.info.legs - animal2.info.legs);
@@ -246,8 +238,6 @@ const services = [{service: "service1", executionTime: 56},
     {service: "service10", executionTime: 42},];
 
 const filteredServices = filterServices(services, 20, 60);
-console.log(filteredServices);
-console.log(services);
 
 function filterServices(services, timeFrom, timeTo) {
     if (isArrayAndNotEmpty(services) && isNumber(timeFrom) && isNumber(timeTo)) {
