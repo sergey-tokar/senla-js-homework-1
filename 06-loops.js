@@ -73,9 +73,9 @@ function isNumber(numberForCheck) {
 Создать строку "Просветление наступит через: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1"
 */
 
-const enlightenmentThroughTen = enlightenmentWillComeThrough(10);
+const enlightenmentThroughTen = enlightenmentThrough(10);
 
-function enlightenmentWillComeThrough(number) {
+function enlightenmentThrough(number) {
     let string = 'Просветление наступит через:'
     if (isNumber(number)) {
         for (let i = number; i > 0; i--) {
@@ -114,9 +114,9 @@ oddNumberFromTo(1, 20);
  */
 
 const testString2 = 'теперь я мастер циклов javascript';
-const camelCasedTestString = toCamelCase(testString2);
+const pascalCasedTestString = toPascalCase(testString2);
 
-function toCamelCase(string) {
+function toPascalCase(string) {
     if (isStringAndNotEmpty(string)) {
         let camelCaseString = '';
         string = capitalize(string);
@@ -128,5 +128,4 @@ function toCamelCase(string) {
         }
         return camelCaseString;
     }
-
 };
